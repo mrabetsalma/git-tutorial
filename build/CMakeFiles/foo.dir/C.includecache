@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/DIST/home/lab_espl_stud12/Desktop/git-tutorial/src/main.c
+stdio.h
+-
+stdlib.h
+-
+
