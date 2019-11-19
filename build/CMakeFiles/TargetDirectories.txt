@@ -1,3 +1,10 @@
+<<<<<<< HEAD
 /DIST/home/lab_espl_stud12/Desktop/git-tutorial/build/CMakeFiles/rebuild_cache.dir
 /DIST/home/lab_espl_stud12/Desktop/git-tutorial/build/CMakeFiles/edit_cache.dir
 /DIST/home/lab_espl_stud12/Desktop/git-tutorial/build/CMakeFiles/foo.dir
+=======
+/DIST/home/lab_espl_stud12/Desktop/git-tutorial/build/CMakeFiles/edit_cache.dir
+/DIST/home/lab_espl_stud12/Desktop/git-tutorial/build/CMakeFiles/rebuild_cache.dir
+/DIST/home/lab_espl_stud12/Desktop/git-tutorial/build/CMakeFiles/STATES_LIB.dir
+/DIST/home/lab_espl_stud12/Desktop/git-tutorial/build/CMakeFiles/state_machine.dir
+>>>>>>> merging
