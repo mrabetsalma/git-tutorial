@@ -19,6 +19,7 @@ Inside each conflict file Git places markers that indicate the area of conflict.
 
 Now in this example I have branched my original code, then on the new branch **and** on my current branch created commits that modify the same line of code. On the current branch I added "Result:" to a `printf` statement while on the branch I added "Output:".
 
+
 ``` bash
 Original code (shared commit) ------ + "Result:"
                               |----- + "Output:"
@@ -60,6 +61,7 @@ Once you have resolved the merge conflict you can then add the resolved file and
 Now that you has seen the basic ideas of how merging works, lets see if you can handle some more complex merge problem yourself. You will find a branch called "unknown_features" which has diverged from this current branch at the previous commit. Your job now is to merge this branch into this current branch and resolve the conflicts presented. The project is a self-contained CMake project inside the `merge_exercise` folder and you will need to apply you C knowledge and CMake knowledge to merge the files correctly to get the project building properly. Please note that there are other tricks and errors hidden in the code. The code should not complile with warnings as warnings should almost always be treated as errors. Warnings will be cause for deducted marks throughout this course. 
 
 The program should be a POSIX thread based state machine that counts to a number specified in the programs options. See the `--help` of the compiled binary to see how to use the program. Once your binary performs this then you have the project merged and building correctly. Merge the project into `merging` and finally into `master`, if both projects are stable and working as expected. Finally create another tag with the annotation "Exercise 1.2 Submission".
+
 
 If all of that is done then you have completed this tutorial. Please be wary that the use of Git is a requirement in this course and will be part of the project's assessment. Inform yourself on proper use of Git commit messages and make sure that you and your team partner establish a Git workflow that you will use throughout the course. A fun tool to use to make sure your workflow has been used properly is `git log --graph --all` which will give you a graphical representation of your repo's logs.
 
