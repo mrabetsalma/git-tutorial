@@ -9,6 +9,8 @@
 /DIST/home/lab_espl_stud12/Desktop/git-tutorial/lib/error.h
 
 /DIST/home/lab_espl_stud12/Desktop/git-tutorial/lib/espl_lib.c
+math.h
+-
 stdio.h
 -
 stdlib.h
