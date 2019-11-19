@@ -29,6 +29,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+unsigned char i;
+int j=0;
+int k=0;
+
 typedef struct state state_t;
 /**
  * @struct state
@@ -83,9 +87,9 @@ void states_set_data(void *data) {
 void states_set_input(unsigned char input) { state_machine_dev.input = input; }
 
 unsigned char states_set_state(unsigned int state_id) {
-  for (unsigned char i = 0; i < state_machine_dev.count; i++) {
-    if (state_machine_dev.states[i]->id == state_id) {
-      state_machine_dev.next_state = state_machine_dev.states[i];
+  for (j= 0; j < state_machine_dev.count; j++) {
+    if (state_machine_dev.states[j]->id == state_id) {
+      state_machine_dev.next_state = state_machine_dev.states[j];
       return 0;
     }
   }
@@ -161,13 +165,13 @@ unsigned char states_init(void) {
   state_t *next_state = state_machine_dev.next_state;
 
   /** All states who's probe has not been run are probed, if possible */
-  for (int i = 0; i < state_machine_dev.count; i++)
-    if (!state_machine_dev.states[i]->initd) {
-      if (state_machine_dev.states[i]->probe) {
-        state_machine_dev.current_state = state_machine_dev.states[i];
-        (state_machine_dev.states[i]->probe)();
+  for ( k = 0; k < state_machine_dev.count; k++)
+    if (!state_machine_dev.states[k]->initd) {
+      if (state_machine_dev.states[k]->probe) {
+        state_machine_dev.current_state = state_machine_dev.states[k];
+        (state_machine_dev.states[k]->probe)();
       }
-      state_machine_dev.states[i]->initd = 1;
+      state_machine_dev.states[k]->initd = 1;
     }
 
   /** Restore original states */

@@ -36,6 +36,7 @@
 #include "main.h"
 #include "my_states.h"
 #include "states.h"
+void err_abort();
 
 const char *argp_program_version = "1.0";
 const char *argp_program_bug_address = "alex.hoffman@tum.de";
@@ -57,7 +58,7 @@ typedef struct {
   int args[1];
   int verbose;
   int tick;
-} arguments_t:
+} arguments_t;
 
 void errno_abort(char *message) {
   perror(message);
@@ -143,9 +144,9 @@ void create_timer(int tick) {
 }
 
 void statemachine_callback(void) {
-  my_states_data **cur_data = states_get_data();
+  my_states_data *cur_data = states_get_data();
 
-  int diff = cur_data->cur_val - cur_data->prev_val;
+  int diff = cur_data->cur_val -cur_data->prev_val;
 
   count += diff;
 
@@ -175,7 +176,7 @@ int main(int argc, char **argv) {
          arguments.verbose ? "yes" : "no", arguments.tick);
 
   /** Initialize state machine */
-  states_add(state_probe, state_two_enter, state_two_run, state_two_ext,
+  states_add(state_probe, state_two_enter, state_two_run, state_two_exit,
              state_second_e, SECOND_STATE_NAME);
   states_add(state_probe, NULL, state_three_run, NULL, state_third_e,
              THIRD_STATE_NAME);
@@ -215,5 +216,5 @@ int main(int argc, char **argv) {
 void err_abort(int status, char *message) {
   fprintf(stderr, "%s\n", message);
   exit(status);
-  return 0;
+  return ;
 }
